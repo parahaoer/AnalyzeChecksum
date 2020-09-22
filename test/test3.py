@@ -1,0 +1,10 @@
+# 求 checksum  方法二
+sum = 0x0800 + 0x0000 + 0x0001 + 0x0001 + 0x6162 + 0x6364 + 0x6566 + 0x6768 + 0x696a + 0x6b6c + 0x6d6e + 0x6f70 + 0x7172 + 0x7374 + 0x7576 + 0x7761 + 0x6263 + 0x6465 + 0x6667 + 0x6869
+print('{:d} --->  {:x}'.format(sum, sum))  # 438943 --->  6b29f
+
+sum = (sum >> 16) + (sum & 0xffff)
+sum += (sum >> 16)  # 如果还有高于16位，将继续与低16位相加
+
+answer = ~sum & 0xffff
+
+print('{:d} --->  {:x}'.format(answer, answer))  # 19802 --->  4d5a
