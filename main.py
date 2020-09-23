@@ -9,7 +9,7 @@ if __name__ == "__main__":
 
     ip_pairs_dict = {}
     pcapAnalyzer = PcapAnalyzer(ip_pairs_dict)
-    pcapAnalyzer.get_filelist('pcap_dir/positive-icmp/ICMPTransmitter')
+    pcapAnalyzer.get_filelist('pcap_dir/linux_slice_all_ff.pcapng')
 
     for ip_key in ip_pairs_dict:
         ip_pair_datas = ip_pairs_dict[ip_key]
